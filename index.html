@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scientific Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="calculator">
+    <header>
+      <div>
+        <h1>Scientific Calculator</h1>
+        <p class="subtitle">Simple tools. Precise answers.</p>
+      </div>
+      <button class="key utility" id="clearHistory" title="Clear history">Clear history</button>
+    </header>
+
+    <section class="display" aria-live="polite">
+      <span class="mode" id="mode">DEG</span>
+      <div id="expression"></div>
+      <div id="result">0</div>
+    </section>
+
+    <div class="toolbar">
+      <div class="angle-switch">
+        <button class="active" data-angle="DEG">DEG</button>
+        <button data-angle="RAD">RAD</button>
+      </div>
+      <span class="hint">Keyboard supported</span>
+    </div>
+
+    <section class="keys" id="keys">
+      <button class="key function" data-action="constant" data-value="pi">π</button>
+      <button class="key function" data-action="constant" data-value="e">e</button>
+      <button class="key function" data-action="paren">( )</button>
+      <button class="key utility" data-action="delete">⌫</button>
+      <button class="key utility" data-action="clear">AC</button>
+
+      <button class="key function" data-action="func" data-value="sin">sin</button>
+      <button class="key function" data-action="func" data-value="cos">cos</button>
+      <button class="key function" data-action="func" data-value="tan">tan</button>
+      <button class="key function" data-action="square">x²</button>
+      <button class="key function" data-action="power">xʸ</button>
+
+      <button class="key function" data-action="func" data-value="asin">sin⁻¹</button>
+      <button class="key function" data-action="func" data-value="acos">cos⁻¹</button>
+      <button class="key function" data-action="func" data-value="atan">tan⁻¹</button>
+      <button class="key function" data-action="func" data-value="sqrt">√x</button>
+      <button class="key function" data-action="func" data-value="cbrt">∛x</button>
+
+      <button class="key function" data-action="func" data-value="ln">ln</button>
+      <button class="key function" data-action="func" data-value="log">log</button>
+      <button class="key function" data-action="func" data-value="fact">n!</button>
+      <button class="key function" data-action="reciprocal">1/x</button>
+      <button class="key function" data-action="sign">±</button>
+
+      <button class="key" data-action="digit" data-value="7">7</button>
+      <button class="key" data-action="digit" data-value="8">8</button>
+      <button class="key" data-action="digit" data-value="9">9</button>
+      <button class="key operator" data-action="operator" data-value="/">÷</button>
+      <button class="key operator" data-action="operator" data-value="%">%</button>
+
+      <button class="key" data-action="digit" data-value="4">4</button>
+      <button class="key" data-action="digit" data-value="5">5</button>
+      <button class="key" data-action="digit" data-value="6">6</button>
+      <button class="key operator" data-action="operator" data-value="*">×</button>
+      <button class="key operator" data-action="operator" data-value="-">−</button>
+
+      <button class="key" data-action="digit" data-value="1">1</button>
+      <button class="key" data-action="digit" data-value="2">2</button>
+      <button class="key" data-action="digit" data-value="3">3</button>
+      <button class="key operator" data-action="operator" data-value="+">+</button>
+      <button class="key function" data-action="func" data-value="abs">|x|</button>
+
+      <button class="key zero" data-action="digit" data-value="0">0</button>
+      <button class="key" data-action="decimal">.</button>
+      <button class="key operator" data-action="operator" data-value="ans">Ans</button>
+      <button class="key equals" data-action="equals">=</button>
+    </section>
+
+    <div class="footer">
+      <span>AC clears · ⌫ deletes</span>
+      <span>Enter = evaluate · Esc = clear</span>
+    </div>
+
+    <section class="history">
+      <div class="history-heading">
+        <span>Recent calculations</span>
+        <span>Saved in this browser</span>
+      </div>
+      <div id="historyList"></div>
+    </section>
+  </main>
+</body>
+</html>
